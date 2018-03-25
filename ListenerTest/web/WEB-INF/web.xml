@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    
+    <listener>
+        <listener-class>net.hoanfir.servlet.FirstServletContextListener</listener-class>
+    </listener>
+
+    <!--
+        实例：根据运营需求，双十一晚上零点整，A类商品减100销售，B类商品减10元销售，打折前在原价基础上增加10%
+        要求：三天前将相关折扣信息推送给客户
+        实现：
+            使用java 的timer定时器类，设置一个定时器，在双十一前三天查询数据库，计算相关商品信息发送给用户
+            定时器的启动可以通过ServletContextListener监听器来完成，当服务器启动的时候调用定时器
+            实际开发中用第三方的短信或手机推送方式来发送给用户
+
+        具体步骤：
+        首先导包，以及数据库连接池相关配置信息
+        创建监听器
+        编写定时器
+        完成相关代码逻辑编写
+        -->
+</web-app>
